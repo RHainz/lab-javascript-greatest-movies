@@ -2003,22 +2003,17 @@ const movies = [
 ];
 
 
-function orderByYear(moviesArray) {
-    const year1=[...moviesArray];
-    year1.sort((a,b)=>{
-        if (a.year===b.year){
-            year.sort((a,b)=>{return a.title.localeCompare(b.title)}); {
-        }
-    }
-        return a.year-b.year
+function orderAlphabetically(moviesArray) {
+    const movies2=[... moviesArray];
+    movies2.sort((a,b)=>{
+        return a.title.localeCompare(b.title);
     });
-    return year1;
+    const onlyTitles=movies2.map((current) => { return current.title; });
+    const theTwenty=onlyTitles.slice(0,20);
+    return theTwenty;
 }
 
-console.log(orderByYear(movies));
+const result=orderAlphabetically(movies);
+console.log(result);
 
 
-// // Crescente
-// arr.sort((a, b) => {
-//   return a - b;
-// });
